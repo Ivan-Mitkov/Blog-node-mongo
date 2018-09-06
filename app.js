@@ -30,7 +30,7 @@ let Blog=mongoose.model("Blog",blogSchema);
 
 // })
 //RESTFULL ROUTES
-
+//index route
 app.get(['/','/blogs'], (req, res) => {
     Blog.find({},(err,blogs)=>{
         if(err){
@@ -41,7 +41,21 @@ app.get(['/','/blogs'], (req, res) => {
     });
    
 });
+//new route
+app.get('/blogs/new',(req,res)=>{
+    res.render('new');
+});
+// create route
+app.post('/blogs',(req,res)=>{
+    Blog.create(req.body.blog,(err,newBlog)=>{
+        if(err){
+            res.render('new');
+        }else{
+            res.redirect('/blogs');
+        }
 
+    })
+});
 app.listen(port, () => {
     console.log(`Server is listening on port: ${port}`);
 })
