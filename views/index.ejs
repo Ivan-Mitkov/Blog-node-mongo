@@ -10,12 +10,12 @@
         </div>
     <div><img src=<%=blog.image %> alt="Image for the blog" style="width:300px"></div>
         <div>
-            <%= blog.body %>
+            <%= blog.body.substr(0,100) %>...
         </div>
         <div>
             <%= blog.created %>
         </div>
-
+        <a href='/blogs/<%= blog._id%>'>Read more</a>
     </div>
     <% }); %>
 </div>
