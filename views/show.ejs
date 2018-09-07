@@ -11,13 +11,13 @@
                     style="width:300px">
                 </div>
                 <div class='description'>
-                    <%= blog.body %>
+                    <%- blog.body %>
                 </div>
                 <div class='content'>
                     <%= blog.created.toDateString() %>
                 </div>
                
-                <a class="blue ui big animated fade button abutton" href='/blogs/<%=blog._id%>/edit' tabindex="0" type='submit'>
+                <a class=" ui blue big animated fade button" href='/blogs/<%=blog._id%>/edit' tabindex="0" type='submit'>
                     <div class="visible content">Edit post</div>
                     <div class="hidden content">
                         <i class="paper plane outline icon"></i>
