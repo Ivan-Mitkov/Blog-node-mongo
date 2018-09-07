@@ -6,21 +6,38 @@
         </div>
         <div class='ui top attached '>
             <div class='item'>
-                    <div>
-                        <img class='ui centered rounded image' src=<%=blog.image %> alt="Image for the blog" style="width:300px">
+                <div>
+                    <img class='ui centered rounded image' src=<%=blog.image %> alt="Image for the blog"
+                    style="width:300px">
+                </div>
+                <div class='description'>
+                    <%= blog.body %>
+                </div>
+                <div class='content'>
+                    <%= blog.created.toDateString() %>
+                </div>
+               
+                <a class="blue ui big animated fade button abutton" href='/blogs/<%=blog._id%>/edit' tabindex="0" type='submit'>
+                    <div class="visible content">Edit post</div>
+                    <div class="hidden content">
+                        <i class="paper plane outline icon"></i>
                     </div>
-                    <div class='description'>
-                        <%= blog.body %>
-                    </div>
-                    <div class='content'>
-                        <%= blog.created.toDateString() %>
-                    </div>
+                </a>
+                <form class='ui form forminline' action='/blogs/<%=blog._id%>?_method=DELETE' method="POST">
+                    <button class="ui red big animated fade button" tabindex="0">
+                        <div class="visible content">Delete post</div>
+                        <div class="hidden content">
+                            <i class="trash alternate icon"></i>
+                        </div>
+                    </button>
+                </form>
+
             </div>
-           
-      
+
+
 
         </div>
-        
+
     </div>
 </div>
 <%include partials/footer%>

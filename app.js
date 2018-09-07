@@ -95,6 +95,18 @@ app.put('/blogs/:id',(req,res)=>{
     });
 });
 
+//delete route
+app.delete('/blogs/:id',(req,res)=>{
+    
+    Blog.findByIdAndRemove(req.params.id,(err,deletedPost)=>{
+        if(err){
+            res.redirect('/blogs');
+        }else{
+            res.redirect('/blogs');
+        }
+    });
+});
+
 
 app.listen(port, () => {
     console.log(`Server is listening on port: ${port}`);

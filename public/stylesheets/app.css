@@ -9,3 +9,10 @@ html{
     margin-top: 7rem;
     
 }
+
+.forminline{
+    display: inline-block;
+}
+abutton{
+   color: rgba(197, 40, 12, 0.1)
+}
